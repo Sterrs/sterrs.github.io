@@ -1,84 +1,15 @@
-<!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>Alastair's Crossword</title>
-    <link rel="stylesheet" href="./default.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="./crossword.js"></script>
+<title>Alastair's Website</title>
 </head>
-
 <body>
-  <h1>Alastair's Crossword</h1>
-    <p id="cw"></p>
-
-  <script>
-      puzzle_data = 
-      {
-        "grid":
-        [
-            ["N","O","N","S","E","C","A","T","E","U","R","S","","S"],
-            ["I","","E","","Y","","N","","","R","","E","","U"],
-            ["C","","A","","E","","T","A","R","O","","D","","N"],
-            ["K","E","T","O","S","I","S","","A","B","S","U","R","D"],
-            ["E","","","S","","C","","","","O","","C","","I"],
-            ["L","E","F","T","","O","F","C","O","R","S","I","C","A"],
-            ["","","I","","C","N","","","","O","","B","","L"],
-            ["C","","X","","A","","","","A","S","","L","",""],
-            ["O","R","W","E","L","L","I","A","N","","Y","E","A","R"],
-            ["V","","I","","L","","","","O","","A","","","I"],
-            ["F","I","N","D","I","T","","A","N","Y","W","A","Y","S"],
-            ["E","","D","","S","Y","N","C","","E","","C","","Q"],
-            ["F","","O","","T","","","N","","E","","R","","U"],
-            ["E","","W","H","O","G","O","E","S","T","H","E","R","E"]
-        ],
-        "words":
-        [
-          {"col":1,  "row":1, "length": 12, "direction":"right", "clue":"Pruning shears can cut branches. These aren't pruning shears, so they can't cut branches. (12)", "word":"NONSECATEURS"},
-          {"col":7,  "row":3, "length":4, "direction":"right", "clue":"Alt-J song (4)", "word":"TARO"},
-          {"col":1,  "row":4, "length":7, "direction":"right", "clue":"Metabolic state serving as goal of many low-carbohydrate diets (7)", "word":"KETOSIS"},
-          {"col":9,  "row":4, "length":6, "direction":"right", "clue":"Stupid and unreasonable, in a silly or humorous way (6)", "word":"ABSURD"},
-          {"col":1,  "row":6, "length":4, "direction":"right", "clue":"Sinister (4)", "word":"LEFT"},
-          {"col":6,  "row":6, "length":9, "direction":"right", "clue":"Naturally from a French island in the mediterranean (2,7)", "word":"OFCORSICA"},
-          {"col":5,  "row":7, "length":2, "direction":"right", "clue":"PRC TLD (2)", "word":"CN"},
-          {"col":9,  "row":8, "length":2, "direction":"right", "clue":"__ if! (2)", "word":"AS"},
-          {"col":1,  "row":9, "length":9, "direction":"right", "clue":"Used to describe a political system where the government controls every aspect of people's lives (9)", "word":"ORWELLIAN"},
-          {"col":11, "row":9, "length":4, "direction":"right", "clue":"Earth's orbital period (4)", "word":"YEAR"},
-          {"col":1,  "row":11, "length":6, "direction":"right", "clue":"What to do when you lose something (4,2)", "word":"FINDIT"},
-          {"col":8,  "row":11, "length":7, "direction":"right", "clue":"Regardless (7)", "word":"ANYWAYS"},
-          {"col":5,  "row":12, "length":4, "direction":"right", "clue":"Share information titanically (4)", "word":"SYNC"},
-          {"col":3,  "row":14, "length":12, "direction":"right", "clue":"Cliched challenge issued by sentry or guard (3,4,5)", "word":"WHOGOESTHERE"},
-          {"col":1,  "row":1, "length":6, "direction":"down", "clue":"A quarter is the square of its value, in some sense (6)", "word":"NICKEL"},
-          {"col":3,  "row":1, "length":4, "direction":"down", "clue":"Like a shot (4)", "word":"NEAT"},
-          {"col":5,  "row":1, "length":4, "direction":"down", "clue":"Where pupils reside (4)", "word":"EYES"},
-          {"col":7,  "row":1, "length":4, "direction":"down", "clue":"Adam's colleagues (4)", "word":"ANTS"},
-          {"col":10, "row":1, "length":8, "direction":"down", "clue":"Symbol depicting a serpent eating its own tail (8)", "word":"UROBOROS"},
-          {"col":12, "row":1, "length":9, "direction":"down", "clue":"Vulnerable to persuasion or corruption (9)", "word":"SEDUCIBLE"},
-          {"col":14, "row":1, "length":7, "direction":"down", "clue":"Keeps time anti-clockwise below the tropic of capricorn (7)", "word":"SUNDIAL"},
-          {"col":9,  "row":3, "length":2, "direction":"down", "clue":"Ooh, ah, up the ____ (2)", "word":"RA"},
-          {"col":4,  "row":4, "length":3, "direction":"down", "clue":"Music composed specifically to accompany another work of art (3)", "word":"OST"},
-          {"col":6,  "row":4, "length":4, "direction":"down", "clue":"Pictogram displayed on a computer screen (4)", "word":"ICON"},
-          {"col":3,  "row":6, "length":9, "direction":"down", "clue":"Glazier's responsibility (3,6)", "word":"FIXWINDOW"},
-          {"col":5,  "row":7, "length":8, "direction":"down", "clue":"Jupiter's second largest moon (8)", "word":"CALLISTO"},
-          {"col":1,  "row":8, "length":7, "direction":"down", "clue":"Trump: despite the constant negative press ________ (7)", "word":"COVFEFE"},
-          {"col":9,  "row":8, "length":4, "direction":"down", "clue":"4chan user (4)", "word":"ANON"},
-          {"col":11, "row":9, "length":3, "direction":"down", "clue":"Not to be confused with pitch or roll (3)", "word":"YAW"},
-          {"col":14, "row":9, "length":6, "direction":"down", "clue":"Verging on impropriety or indecency (6)", "word":"RISQUE"},
-          {"col":6, "row":11, "length":2, "direction":"down", "clue":"Used to express graditude by text (2)", "word":"TY"},
-          {"col":8,  "row":11, "length":4, "direction":"down", "clue":"Affliction by pimples (4)", "word":"ACNE"},
-          {"col":10, "row":11, "length":4, "direction":"down", "clue":"Hurl with great force (4)", "word":"YEET"},
-          {"col":12, "row":11, "length":4, "direction":"down", "clue":"Unit of area (4)", "word":"ACRE"}
-        ]
-      };
-
-    crossword.new_crossword(
-      el          = "#cw", 
-      id          = "cw_001", 
-      puzzle_data = puzzle_data, 
-      checker     = "word"
-    );
-  </script>
+<h1>Alastair's Website</h1>
+<ul>
+	<li><a href="./blog/">My Blog</a></li>
+	<li><a href="./crossword.html">Crossword 2023</a></li>
+	<li><a href="./diminishing-whist/">Play Diminishing Whist</a></li>
+</ul>
+<h2>About</h2>
+My name's Alastair, I'm a maths graduate with wide-ranging interests including open-source software, rationalism and economics. I currently work as a data specialist for a consulting company.
 </body>
-
 </html>
